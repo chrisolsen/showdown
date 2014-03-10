@@ -120,7 +120,7 @@ var g_output_modifiers = [];
 if (typeof module !== 'undefined' && typeof exports !== 'undefined' && typeof require !== 'undefined') {
 	var fs = require('fs');
 
-	if (fs && Object.keys(fs).length > 0) {
+	if (fs && fs.readdirSync) {
 		// Search extensions folder
 		var extensions = fs.readdirSync((__dirname || '.')+'/extensions').filter(function(file){
 			return ~file.indexOf('.js');
